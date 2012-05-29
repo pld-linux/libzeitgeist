@@ -6,12 +6,12 @@
 Summary:	Zeitgeist client library
 Summary(pl.UTF-8):	Biblioteka kliencka Zeitgeist
 Name:		libzeitgeist
-Version:	0.3.12
+Version:	0.3.16
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://launchpad.net/libzeitgeist/0.3/%{version}/+download/%{name}-%{version}.tar.gz
-# Source0-md5:	82803dc69d7e2382642fc4f34d46ce32
+# Source0-md5:	659d92ba9572e26f57d7955be33427ba
 URL:		http://zeitgeist-project.com/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
