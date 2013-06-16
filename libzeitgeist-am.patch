@@ -1,0 +1,19 @@
+--- libzeitgeist-0.3.18/configure.ac.orig	2013-06-13 22:25:25.945934397 +0200
++++ libzeitgeist-0.3.18/configure.ac	2013-06-13 22:27:33.495243403 +0200
+@@ -2,7 +2,7 @@
+ AC_INIT(libzeitgeist, 0.3.18)
+ 
+ AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADERS(config.h)
+ AM_MAINTAINER_MODE
+ 
+ m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
+@@ -30,7 +30,6 @@ AC_SUBST(ZEITGEIST_LT_LDFLAGS)
+ ###################################################################
+ AC_ISC_POSIX
+ AC_PROG_CC
+-AM_PROG_CC_STDC
+ AC_HEADER_STDC
+ AM_PROG_LIBTOOL
+ 

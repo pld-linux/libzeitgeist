@@ -7,11 +7,12 @@ Summary:	Zeitgeist client library
 Summary(pl.UTF-8):	Biblioteka kliencka Zeitgeist
 Name:		libzeitgeist
 Version:	0.3.18
-Release:	2
+Release:	3
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://launchpad.net/libzeitgeist/0.3/%{version}/+download/%{name}-%{version}.tar.gz
 # Source0-md5:	d63a37295d01a58086d0d4ae26e604c2
+Patch0:		%{name}-am.patch
 URL:		http://zeitgeist-project.com/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -67,21 +68,23 @@ API documentation for zeitgeist library.
 %description apidocs -l pl.UTF-8
 Dokumentacja API biblioteki zeitgeist.
 
-%package -n vala-zeitgeist
+%package -n vala-zeitgeist1
 Summary:	Vala API for zeitgeist library
 Summary(pl.UTF-8):	API języka Vala dla biblioteki zeitgeist
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Requires:	vala
+Conflicts:	vala-zeitgeist < 0.3.18-3
 
-%description -n vala-zeitgeist
+%description -n vala-zeitgeist1
 Vala API for zeitgeist library.
 
-%description -n vala-zeitgeist -l pl.UTF-8
+%description -n vala-zeitgeist1 -l pl.UTF-8
 API języka Vala dla biblioteki zeitgeist.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -135,7 +138,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_gtkdocdir}/zeitgeist-1.0
 %endif
 
-%files -n vala-zeitgeist
+%files -n vala-zeitgeist1
 %defattr(644,root,root,755)
 %{_datadir}/vala/vapi/zeitgeist-1.0.deps
 %{_datadir}/vala/vapi/zeitgeist-1.0.vapi
