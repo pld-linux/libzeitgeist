@@ -2,12 +2,12 @@
 # Conditional build:
 %bcond_without	apidocs		# do not build and package API docs
 %bcond_without	static_libs	# don't build static libraries
-#
+
 Summary:	Zeitgeist client library
 Summary(pl.UTF-8):	Biblioteka kliencka Zeitgeist
 Name:		libzeitgeist
 Version:	0.3.18
-Release:	4
+Release:	5
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://launchpad.net/libzeitgeist/0.3/%{version}/+download/%{name}-%{version}.tar.gz
@@ -61,6 +61,9 @@ Summary:	zeitgeist library API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki zeitgeist
 Group:		Documentation
 Requires:	gtk-doc-common
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API documentation for zeitgeist library.
