@@ -61,9 +61,7 @@ Summary:	zeitgeist library API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki zeitgeist
 Group:		Documentation
 Requires:	gtk-doc-common
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 API documentation for zeitgeist library.
@@ -78,9 +76,7 @@ Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Requires:	vala
 Conflicts:	vala-zeitgeist < 0.3.18-3
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description -n vala-zeitgeist1
 Vala API for zeitgeist library.
